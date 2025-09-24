@@ -1,8 +1,11 @@
 package com.airline.fleetmanagement.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
+@Data
 @Entity
+@Table(name = "Aircrafts")
 public class Aircraft {
 
     @Id
@@ -19,14 +22,23 @@ public class Aircraft {
     @Enumerated(EnumType.STRING)
     private Status status;
 
+    @Column(name = "last_route_flown")
+    private String lastRouteFlown;
+
+    private int yearOfManufacture;
+    private int totalFlightHours;
+
     public Aircraft(){}
 
-    public Aircraft(String registrationNumber,String model,String manufacturer,int capacity, Status status){
+    public Aircraft(String registrationNumber,String model,String manufacturer,int capacity, Status status, String lastRouteFlown, int yearOfManufacture, int totalFlightHours){
         this.registrationNumber= registrationNumber;
         this.model=model;
         this.manufacturer=manufacturer;
         this.capacity=capacity;
         this.status=status;
+        this.lastRouteFlown=lastRouteFlown;
+        this.yearOfManufacture=yearOfManufacture;
+        this.totalFlightHours=totalFlightHours;
     }
 
     public Long getId() {
@@ -71,5 +83,20 @@ public class Aircraft {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public int getYearofManufacture(){
+        return yearOfManufacture;
+    }
+    public void setYearofManufacture(int yearOfManufacture){
+        this.yearOfManufacture=yearOfManufacture;
+    }
+
+    public int getTotalFlightHours(){
+        return totalFlightHours;
+    }
+
+    public void setTotalFlightHours(int totalFlightHours){
+        this.totalFlightHours=totalFlightHours;
     }
 }
