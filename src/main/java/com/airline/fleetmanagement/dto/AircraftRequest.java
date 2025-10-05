@@ -1,5 +1,8 @@
 package com.airline.fleetmanagement.dto;
 
+import lombok.Data;
+
+@Data
 public class AircraftRequest {
 
     private String registrationNumber;
