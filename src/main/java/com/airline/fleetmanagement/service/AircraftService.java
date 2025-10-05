@@ -2,17 +2,19 @@ package com.airline.fleetmanagement.service;
 
 import com.airline.fleetmanagement.entity.Aircraft;
 import com.airline.fleetmanagement.repository.AircraftRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
+@RequiredArgsConstructor
 public class AircraftService {
 
     private final AircraftRepository aircraftRepository;
 
-    public AircraftService(AircraftRepository aircraftRepository){
-        this.aircraftRepository=aircraftRepository;
-    }
+
     public Aircraft saveAircraft(Aircraft aircraft){
         return aircraftRepository.save(aircraft);
     }
