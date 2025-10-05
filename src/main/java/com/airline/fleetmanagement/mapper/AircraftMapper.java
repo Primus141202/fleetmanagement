@@ -24,6 +24,15 @@ public class AircraftMapper {
     public static AircraftResponse toResponse(Aircraft aircraft){
         AircraftResponse dto=new AircraftResponse();
         dto.setId(aircraft.getId());
+        dto.setRegistrationNumber(aircraft.getRegistrationNumber());
+        dto.setModel(aircraft.getModel());
+        dto.setCapacity(aircraft.getCapacity());
+        dto.setStatus(aircraft.getStatus().name());
+        dto.setManufacturer(aircraft.getManufacturer());
+        dto.setLastRouteFlown(aircraft.getLastRouteFlown());
+        dto.setTotalFlightHours(dto.getTotalFlightHours());
+        dto.setYearOfManufacture(dto.getYearOfManufacture());
+        return dto;
 
     }
 }
