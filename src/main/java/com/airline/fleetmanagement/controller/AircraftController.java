@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 import static org.springframework.http.ResponseEntity.*;
 
 @RestController
-@RequestMapping("/api/aircraft")
+@RequestMapping("/api/aircrafts")
 @RequiredArgsConstructor
 public class AircraftController {
 
